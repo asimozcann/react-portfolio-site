@@ -36,10 +36,9 @@ const About = () => {
               geliştirici adayıyım. <br /> HTML ve CSS’de sağlam bir altyapıya
               sahibim, JavaScript bilgim ise iyi düzeyde. <br /> Şu anda React
               öğreniyorum ve bu alandaki yetkinliğimi her gün proje geliştirerek
-              ve güncel kaynakları takip ederek artırıyorum. Kod yazmayı,
+              ve güncel kaynakları takip ederek artırıyorum. <br /> Kod yazmayı,
               kullanıcı dostu arayüzler tasarlamayı ve deneyimi iyileştirmeyi
-              tutkuyla yapıyorum. Ayrıca ChatGPT gibi yapay zekâ destekli
-              araçlarla verimliliğimi artırmaya açığım.
+              tutkuyla yapıyorum. Projelerimi geliştirirken ihtiyaç duyduğumda GitHub Copilot, ChatGPT gibi yapay zeka destekli araçlardan faydalanıyorum. Bu sayede araştırma sürecini hızlandırıyor, daha verimli ve temiz kodlar yazmaya odaklanıyorum.
             </p>
             <ul className="flex my-10 text-lg leading-10 flex-col gap-5">
               {skills.map((skill, id) => {
