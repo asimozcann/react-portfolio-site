@@ -10,7 +10,7 @@ export const projects = [
     demoLink: "https://notebook-app-asimozcan.vercel.app/",
   },
   {
-    id: 1,
+    id: 2,
     img: "/images/blog.png",
     title: "MyBlog – React ile Dinamik Blog Sitesi",
     technologies: "React, Tailwind CSS, React Router, External API",
@@ -20,7 +20,7 @@ export const projects = [
     demoLink: "https://react-blog-site-asimozcan.vercel.app/",
   },
   {
-    id: 1,
+    id: 3,
     img: "/images/todoapp.png",
     title: "React Todo – Filtreleme Özellikli Yapılacaklar Listesi",
     technologies: "React, Tailwind CSS, LocalStorage",
@@ -30,7 +30,7 @@ export const projects = [
     demoLink: "https://react-todo-app-asimozcan.vercel.app/",
   },
   {
-    id: 1,
+    id: 4,
     img: "/images/shoppingapp.png",
     title: "LocalStorage ve Context API ile Sepet Uygulaması",
     technologies: "React, Tailwind CSS, LocalStorage, Context API",

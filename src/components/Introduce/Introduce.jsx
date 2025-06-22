@@ -25,7 +25,8 @@ const Introduce = () => {
             <img
               className="w-full md:max-w-[180px] max-w-[150px]"
               src="/images/avatar.png"
-              alt=""
+              alt="Avatar"
+              loading="lazy"
             />
           </div>
         </div>

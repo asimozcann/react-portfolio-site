@@ -6,7 +6,7 @@ h1 {
   @apply font-dancingSans;
 }
 main {
-  background-image: url("/images/bg.jpg");
+  background-image: url("/images/bg1.jpg");
   background-position: bottom;
   background-size: cover;
   height: 100vh;

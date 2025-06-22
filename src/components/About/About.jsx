@@ -61,7 +61,9 @@ const About = () => {
             <img
               className="w-full max-w-[1800px]"
               src="/images/about.jpg"
-              alt=""
+              alt="Hakkımda Görseli"
+              loading="lazy"
+              width="1800"
             />
           </div>
         </div>

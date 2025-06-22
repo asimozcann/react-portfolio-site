@@ -1,12 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
 import RootLayout from "./Pages/Root";
-import HomePage from "./Pages/Home";
-import ProjectsPage from "./Pages/Projects";
-import AboutPage from "./Pages/About";
-import ContactPage from "./Pages/Contact";
+const HomePage = React.lazy(() => import("./Pages/Home"));
+const ProjectsPage = React.lazy(() => import("./Pages/Projects"));
+const AboutPage = React.lazy(() => import("./Pages/About"));
+const ContactPage = React.lazy(() => import("./Pages/Contact"));
 import { ContactLinkProvider } from "./components/context/ContactLinkContext";
 import ScrollToTop from "./components/UI/ScrollToTop";
-import ErrorPage from "./Pages/Error";
+const ErrorPage = React.lazy(() => import("./Pages/Error"));
 import { ThemeContextProvider } from "./components/context/ThemeContext";
 
 function App() {

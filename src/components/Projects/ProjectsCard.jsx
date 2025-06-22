@@ -3,7 +3,12 @@ const ProjectsCard = ({ project }) => {
 
   return (
     <div className="h-full md:max-h-[800px] border rounded-lg w-full p-6 shadow-[0_0px_5px_rgba(34,197,94,0.5)] hover:shadow-[0_0px_10px_rgba(34,197,94,0.6)] md:hover:scale-[1.02] hover:scale-[1.01] transition duration-500 flex flex-col">
-      <img className="w-full  object-cover rounded-md" src={img} alt={title} />
+      <img
+        className="w-full  object-cover rounded-md"
+        src={img}
+        alt={title}
+        loading="lazy"
+      />
 
       <h1 className="md:text-3xl text-2xl text-[#2B975D] mt-6 text-center">
         {title}
