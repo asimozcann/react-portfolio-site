@@ -56,6 +56,7 @@ const MainNavigation = () => {
                 setmenuOpen(!menuOpen);
               }}
               className="fa-solid fa-bars cursor-pointer text-3xl md:hidden"
+              aria-label="Menüyü Aç/Kapat"
             ></i>
           </li>
         </ul>
