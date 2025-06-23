@@ -10,7 +10,7 @@ export const ContactLinkProvider = ({ children }) => {
     },
     {
       icon: <i className="fa-brands fa-linkedin-in text-[#2B975D] "></i>,
-      link: "https://github.com/asimozcann",
+      link: "https://www.linkedin.com/in/asim-ozcan/",
     },
     {
       icon: <i className="fa-brands fa-instagram text-[#2B975D] "></i>,
