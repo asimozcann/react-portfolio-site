@@ -1,29 +1,33 @@
 import { useState } from "react";
 import Wrapper from "../UI/Wrapper";
 import Modal from "../UI/Modal";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-
+  const onSubmit = async (data) => {
     try {
       const response = await fetch("https://formspree.io/f/myzjnngk", {
         method: "POST",
-        body: formData,
         headers: {
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
         setModalMessage("Teşekkürler, mesajınız gönderildi.");
         setModalOpen(true);
-        e.target.reset();
+        reset();
       } else {
         setModalMessage("Bir hata oluştu, lütfen tekrar deneyin.");
         setModalOpen(true);
@@ -38,9 +42,11 @@ const Contact = () => {
     <Wrapper className="mt-14">
       <section className="mt-10 grid md:grid-cols-2 gap-10">
         <div>
-          <h1 className="md:text-5xl text-4xl text-center text-[#2B975D]">Bana Ulaşın</h1>
+          <h1 className="md:text-5xl text-4xl text-center text-[#2B975D]">
+            Bana Ulaşın
+          </h1>
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col dark:text-black text-lg my-10 gap-10"
           >
             <input type="hidden" name="_captcha" value="false" />
@@ -48,26 +54,44 @@ const Contact = () => {
             <input type="text" name="_honey" style={{ display: "none" }} />
 
             <input
-              className="p-2 dark:border-[#2B975D] dark:border-2 outline-none border-b-2"
               type="text"
-              name="name"
+              {...register("name", {
+                required: "İsim zorunludur",
+                minLength: { value: 3, message: "En az 3 karakter olmalı" },
+              })}
               placeholder="Adın"
-              required
+              className={`p-2 dark:border-[#2B975D] dark:border-2 outline-none border-b-2 ${
+                errors.name ? "border-red-500" : ""
+              } `}
             />
+            <p className="text-red-500">{errors.name?.message}</p>
             <input
-              className="p-2 dark:border-[#2B975D] dark:border-2 outline-none border-b-2"
+              className={`p-2 dark:border-[#2B975D] dark:border-2 outline-none border-b-2 ${
+                errors.email ? "border-red-500" : ""
+              } `}
               type="email"
-              name="email"
               placeholder="Email"
-              required
+              {...register("email", {
+                required: "Email zorunludur",
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: "Geçerli bir email adresi girin",
+                },
+              })}
             />
+            <p className="text-red-500">{errors.email?.message}</p>
             <textarea
-              className="p-2 dark:border-[#2B975D] dark:border-2 resize-none outline-none border-b-2"
-              name="message"
+              className={`p-2 dark:border-[#2B975D] dark:border-2 resize-none outline-none border-b-2 ${
+                errors.message ? "border-red-500" : ""
+              } `}
               placeholder="Mesajın"
               rows="4"
-              required
+              {...register("message", {
+                required: "Mesaj zorunludur",
+                minLength: { value: 10, message: "En az 10 karakter olmalı" },
+              })}
             />
+            <p className="text-red-500">{errors.message?.message}</p>
             <button
               className="mr-auto bg-[#2B975D] p-2 rounded-md text-white hover:bg-[#2b975dd9] transition duration-300"
               type="submit"
@@ -77,16 +101,20 @@ const Contact = () => {
           </form>
 
           <div className="pt-10 md:text-left text-center">
-            <h1 className="md:text-5xl text-4xl text-[#2B975D]">İletişim Bilgileri</h1>
+            <h1 className="md:text-5xl text-4xl text-[#2B975D]">
+              İletişim Bilgileri
+            </h1>
             <ul className="mt-10 flex md:text-xl flex-col gap-5">
               <li>
                 <i className="fa-solid fa-phone mr-2"></i>+90 537 216 4986
               </li>
               <li>
-                <i className="fa-solid fa-envelope mr-2"></i>asim_ozcan@outlook.com
+                <i className="fa-solid fa-envelope mr-2"></i>
+                asim_ozcan@outlook.com
               </li>
               <li>
-                <i className="fa-solid fa-location-dot mr-2"></i>Kayıhan Mah. 2050 Sok. No:2 Pamukkale/Denizli
+                <i className="fa-solid fa-location-dot mr-2"></i>Kayıhan Mah.
+                2050 Sok. No:2 Pamukkale/Denizli
               </li>
             </ul>
           </div>
@@ -102,7 +130,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {modalOpen && <Modal message={modalMessage} onClose={() => setModalOpen(false)} />}
+      {modalOpen && (
+        <Modal message={modalMessage} onClose={() => setModalOpen(false)} />
+      )}
     </Wrapper>
   );
 };
