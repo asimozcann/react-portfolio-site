@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <Wrapper className="mt-14">
+    <Wrapper className="my-14 ">
       <section className="mt-10 grid md:grid-cols-2 gap-10">
         <div>
           <h1 className="md:text-5xl text-4xl text-center text-[#2B975D]">
@@ -104,7 +104,7 @@ const Contact = () => {
             <h1 className="md:text-5xl text-4xl text-[#2B975D]">
               İletişim Bilgileri
             </h1>
-            <ul className="mt-10 flex md:text-xl flex-col gap-5">
+            <ul className="mt-6 flex md:text-lg flex-col gap-4">
               <li>
                 <i className="fa-solid fa-phone mr-2"></i>+90 537 216 4986
               </li>
