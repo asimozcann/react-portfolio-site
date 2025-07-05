@@ -17,13 +17,16 @@ const Footer = () => {
         </div>
         <div>
           <h1 className=" text-[#2B975D]">
-            <span className="font-sans text-black ">Copyright © 2025</span> AÖ
+            <span className="font-sans text-black ">
+              Copyright © {new Date().getFullYear()}
+            </span>{" "}
+            AÖ
           </h1>
         </div>
         <div></div>
         <div>
           <ul className="flex items-center justify-center gap-10">
-            {contactLinks.map((item,id) => (
+            {contactLinks.map((item, id) => (
               <li key={id} className="">
                 <a
                   className=" flex items-center justify-center  rounded-full "
