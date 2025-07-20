@@ -39,4 +39,14 @@ export const projects = [
     gitLink: "https://github.com/asimozcann/react-shopping-cart",
     demoLink: "https://react-shopping-cart-asimozcan.vercel.app/",
   },
+  {
+    id: 5,
+    img: "/images/ailifecoach.png",
+    title: "AI Life Coach – Yapay Zeka Destekli Dijital Yaşam Koçu",
+    technologies: "React, Tailwind CSS, Firebase, OpenAI API, Context API",
+    description:
+      "Yapay zeka destekli bu React uygulaması, kullanıcıya dijital terapist gibi tavsiyeler verir, yüz tanıma ile stil önerileri sunar. Chat geçmişi Firebase'e kaydedilir, OpenAI API ile sohbet sağlanır. useContext ile global state yönetimi yapılır.",
+    gitLink: "https://github.com/asimozcann/ai-life-coach",
+    demoLink: "https://ai-life-coach-ozcan.vercel.app/",
+  },
 ];
