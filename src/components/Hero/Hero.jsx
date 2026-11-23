@@ -1,6 +1,7 @@
-import Wrapper from "../UI/Wrapper";
+ import Wrapper from "../UI/Wrapper";
 
 const Hero = () => {
+  const description = "Modern, hızlı ve kullanıcı dostu web siteleri";
   return (
     <main className="flex justify-center items-center relative">
       <Wrapper
@@ -13,7 +14,7 @@ const Hero = () => {
         </h1>
         <p className="lg:text-xl text-[15px] mt-4 ">
           Front-End Developer | React & Tailwind
-          <span className="block">Hızlı, Temiz ve Uyumlu Arayüzler</span>
+          <span className="block">{description}</span>
         </p>
       </Wrapper>
     </main>
